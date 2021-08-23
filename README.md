@@ -1,2 +1,2 @@
 # Scientific Manuscripts
-Repository dedicated to draft *Scientific Articles*.
+Repository dedicated to draft **Scientific Articles**.
