@@ -13,7 +13,7 @@ The roaming procedure maintain persistent connectivity of the subscribers across
 
 In order to standardize technical, commercial and legal aspects of **Roaming Agreement**, the GSM Association broadly outlines the content of such **Roaming Agreement** in standardized form for its members [2]. Reference [3] provides a list of the most commonly used GSMA standards, which can be summarized: (1) **AA.12** constitutes a standard GSMA or Permanent Reference Document; (2) **AA.13** contains the common annexes with operational information (e.g., information on tap file, billing data, settlement procedure, customer care, fraud, etc.); (3) **AA.14** involves the individual annexes containing information about the operator (e.g., contact details of the roaming team, fraud team, IREG team, TADIG team, etc.) and (4) **AA.19** constitutes an addendum to the international **Roaming Agreement** in order to determine specific properties such as charging, billing, and accounting for a specific scenario like the SMS interworking.
 
-While it is true that it is not mandatory to follow the standards proposed by GSMA, according to authoritative voices in the field of negotiating **Roaming Agreement** drafting, most MNOs follow them strictly [8]. Therefore, a first point to consider in the **Roaming Agreement** drafting is how far it is deviated from the GSMA's proposed standards. Thus, during the drafting process of the agreement, the parties should analyze the sub-articles contained in the *standard templates* to determine whether:
+While it is true that it is not mandatory to follow the standards proposed by GSMA, according to authoritative voices in the field of negotiating **Roaming Agreement** drafting, most MNOs follow them strictly [4]. Therefore, a first point to consider in the **Roaming Agreement** drafting is how far it is deviated from the GSMA's proposed standards. Thus, during the drafting process of the agreement, the parties should analyze the sub-articles contained in the *standard templates* to determine whether:
 
 1. Leave an article/sub-article as found in the template thereby establishing a **standard clause**.
 2. Introduce certain **variations** in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies and so on with respect to the original text, i.e., the GSMA templates.
@@ -47,9 +47,5 @@ This research was funded by **Linux Foundation Mentorship Program** through the 
 ## References
 1. I. Tanaka, "Volte roaming and interconnection standard technology", NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37-41, 2013.
 2. GSMA, “Direct Wholesale Roaming Access Agreement Version 2.7 08 December 2017,” London, 2019.
-3. Referencia a Rocco U. indicando los estándares de uso más comúnes (online access: http:// ...)
-4. AA.12
-5. AA.13
-6. AA.14
-7. AA.19
-8. Referencia a Rocco U. soportando la afirmación de qué la mayoría de los acuerdos de itinerancia se basan en el estándar de GSMA (online access: http:// ...).
+3. ROCCO, “The International Roaming Agreement,” 2017. [Online]. Available: https://www.roccoresearch.com/portfolio-items/the-roaming-agreement/. [Accessed: 24-Ago-2021].
+4. I. Mauro and A. Arancibia, “International roaming explained,” London, UK, 2012.
