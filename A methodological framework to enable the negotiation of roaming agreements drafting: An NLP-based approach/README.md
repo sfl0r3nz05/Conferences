@@ -26,9 +26,7 @@ The rest of this manuscript is structured as follows: Section 2 reviews both att
 
 ## Related work
 
-El related work se enfoca por un lado en analizar los intentos de digitalización transparente y por otro lado el análisis de los mecanismos de digitalización de textos usando técnicas NLP. En ese sentido la literatura científica existente se enfoca en la búsqueda de soluciones técnicas para habilitar interacciones entre LMNO y remote visitant de forma segura.
-
-Intentos de digitalización transparente
+This section focuses on analyzing, on the one hand, the existing approaches in the context of **Roaming Agreement**, while on the other hand, the mechanisms of text digitization using NLP-based techniques. The first approach found in the scientific literature is in relation to the application of the **Roaming Agreement**. Thus, the reference [5] proposes a dynamic **Roaming Agreement** between the Local 5G Operator and the MNO. The interaction between the two entities takes place through an Ethereum based platform. A second approach focuses uniquely on the billing of the services obtained as a result of the **Roaming Agreement** [6]. This agreement is incorporated as part of a smart contract so the work contributes significantly to the digitization process of the agreement, allowing for a faster, more seamless process in which payments can be requested and obtained quickly due to less need for manual intervention. The contextualization of this system in the business environment is proposed by important MNOs such as Telefonica, Deutsche Telekom and Vodafone which use blockchain for Roaming settlement within the framework of the **Roaming Agreement** between the parties [7].
 
 Mecanismos de digitalización, procesamiento de texto, basado en NLP
 
@@ -48,7 +46,9 @@ This research was funded by **Linux Foundation Mentorship Program** through the 
 
 ## References
 1. I. Tanaka, "Volte roaming and interconnection standard technology", NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37-41, 2013.
-2. GSMA, “Direct Wholesale Roaming Access Agreement Version 2.7 08 December 2017,” London, 2019.
+2. Ferwerda, R.; Bayings, M.; Van der Kam, M.; Bekkers, R. Advancing E-Roaming in Europe: Towards a Single “Language” for the European Charging Infrastructure. World Electr. Veh. J. 2018, 9, 50. https://doi.org/10.3390/wevj9040050.
 3. ROCCO, “The International Roaming Agreement,” 2017. [Online]. Available: https://www.roccoresearch.com/portfolio-items/the-roaming-agreement/. [Accessed: 24-Ago-2021].
 4. ROCCO, “What is ROAMING HUBBING?,” 2017. [Online]. Available: https://www.roccoresearch.com/portfolio-items/roaming-hubbing/. [Accessed: 24-Ago-2021].
-5. ROCCO, “What is ROAMING HUBBING?,” 2017. [Online]. Available: https://www.roccoresearch.com/portfolio-items/roaming-hubbing/. [Accessed: 24-Ago-2021].
+5. N. Weerasinghe, T. Hewa, M. Dissanayake, M. Ylianttila and M. Liyanage, "Blockchain-based Roaming and Offload Service Platform for Local 5G Operators," 2021 IEEE 18th Annual Consumer Communications & Networking Conference (CCNC), 2021, pp. 1-6, doi: 10.1109/CCNC49032.2021.9369516.
+6. C. Harris, "Improving Telecom Industry Processes Using Ordered Transactions in Hyperledger Fabric," 2019 IEEE Globecom Workshops (GC Wkshps), 2019, pp. 1-6, doi: 10.1109/GCWkshps45667.2019.9024541.
+7. M. Huillet, "Telefónica, Deutsche Telekom and Vodafone Use Blockchain for Roaming Settlement," 2020. [Online]. Available: https://cointelegraph.com/news/telefonica-deutsche-telekom-and-vodafone-use-blockchain-for-roaming-settlement. [Accessed: 24-Ago-2021].
