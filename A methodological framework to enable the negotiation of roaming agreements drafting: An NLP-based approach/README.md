@@ -33,9 +33,15 @@ The scientific literature is more extensive regarding the mechanism of digitizat
 Although valuable works were analyzed within the context of efficient and transparent digitization of **Roaming Agreement**, these works focused on the correct application of the **Roaming Agreement** and not from the perspective of the negotiation of **Roaming Agreement** drafting between MNOs. Additionally, text processing mechanisms using NLP-based techniques were analyzed in the judicial or healthcare domain, but outside the context of the negotiation process for the drafting of **Roaming Agreement**, thus ensuring the novelty of our work.
 
 ## Designed Methodology
- - Posible herramienta para llevar a cabo el diseño: https://diagrams.mingrammer.com/
+
+### Key concepts
+
+#### Amazon comprehend
+
+#### Smilarity Analysis
+
 ## Implemented System
-- Posible herramienta para llevar a cabo la implementación: https://diagrams.mingrammer.com/
+Plugabble system jaccard or cossine
 
 ## Discussion of Results
 
