@@ -13,12 +13,12 @@ The roaming procedure maintain persistent connectivity of the subscribers across
 
 In order to standardize the legal commercial aspects of **Roaming Agreement**, the GSM Association broadly outlines the content of such **Roaming Agreement** in standardized form for its members [2]. The following table provides a list of the most commonly used GSMA-provided standards agreements [3]. In short, **AA.12** constitutes a standard GSMA or Permanent Reference Document; **AA.13** contains the common annexes with operational information (e.g., information on tap file, billing data, settlement procedure, customer care, fraud, etc.); **AA.14** involves the individual annexes containing information about the operator (e.g., contact details of the roaming team, fraud team, IREG team, TADIG team, etc.); **AA.19** constitutes an addendum to the international **Roaming Agreement** in order to determine specific properties such as charging, billing, and accounting for a specific scenario like the SMS interworking.
 
-|GSMA Standard Templates|Reference|Common use|
-|:---------------------:|:-------:|:-------:|
-|AA.12                  |[4]      |X        |
-|AA.13                  |[5]      |X        |
-|AA.14                  |[6]      |X        |
-|AA.19                  |[7]      |X        |
+|GSMA Standard Templates|Reference|
+|:---------------------:|:-------:|
+|AA.12                  |[4]      |
+|AA.13                  |[5]      |
+|AA.14                  |[6]      |
+|AA.19                  |[7]      |
 
 While it is true that it is not mandatory to follow the standards proposed by GSMA, according to authoritative voices in the field of negotiating **Roaming Agreement** drafting, most MNOs follow them strictly [8]. Therefore, a first point to consider in the **Roaming Agreement** drafting is how far it is deviated from the GSMA's proposed standards. Thus, during the drafting process of the agreement, the parties should analyze the sub-articles contained in the *standard templates* to determine whether:
 
@@ -27,9 +27,9 @@ While it is true that it is not mandatory to follow the standards proposed by GS
 3. Introduce completely new articles/sub-articles that respond to particular interests by constituting **customized texts**.
 4. Specify the value of certain **variables** that are found in a certain text, such as dates, names of entities, amounts and others.
 
-However, a successful drafting of the **Roaming Agreement** goes through a complex negotiation process in which, currently the parties, i.e. the Mobile Network Operators (MNOs), still use asynchronous flows such as email or even regular mail for information exchange. Since these processes lack of transparency, which results in the violation of roaming agreements by network operators, it is neccesary to provide un sistema de digitalización transparente para la negociación de la redacción de los acuerdos de itinerancia. Por este motivo, this paper proposes una primera aproximación que propone el use of *Natural Language Processing (NLP)* as an engine to digitize the legal text in the **Romaing Agreements**. Este motor NLP analiza the different Articles y sub-artículos del acuerdo de itinerancia determinando la existencia de variables, variations, clausulas estándares y textos personalizados in the text.
+However, a successful drafting of the **Roaming Agreement** goes through a complex negotiation process in which, currently the parties, i.e. the Mobile Network Operators (MNOs), still use asynchronous flows such as email or even regular mail for information exchange. Since these processes lack of transparency, which results in the violation of roaming agreements by network operators, it is neccesary to provide un sistema de digitalización transparente para la negociación de la redacción de los acuerdos de itinerancia. For this reason, this paper proposes the use of *Natural Language Processing (NLP)* as an engine to digitize the legal text in the **Romaing Agreements**. This NLP engine analyzes the different articles and sub-articles of the **Romaing Agreements** determining the existence of *variables*, *variations*, *standard clauses* and *customized texts* in the text.
 
-The rest of this manuscript is structured as follows: Section 2 reviews both attempts at a transparent digitalization of **Roaming Agreement** and existing NLP-based digitization mechanisms as part of the [related work](). Section 3 provides a background including Modbus protocol, SSI, and HFB, i.e., mbapSSI enabling technologies. The design and implementation of our system are described in Section 4. Section 5 describes the testbed and conducted experiments to determine the feasibility of the proposal. Section 6 discusses the results of conducted experiments. Finally, the conclusions of the manuscript are included in Section 7. 
+The rest of this manuscript is structured as follows: Section 2 reviews both attempts at a transparent digitalization of **Roaming Agreement** and existing NLP-based digitization mechanisms as part of the **related work**. Section 3 estblishes the **designed methodology**. The implementation of our system are described in Section 4. Section 6 discusses the results of conducted experiments. Finally, the conclusions of the manuscript are included in Section 7. 
 
 ## Related work
 
