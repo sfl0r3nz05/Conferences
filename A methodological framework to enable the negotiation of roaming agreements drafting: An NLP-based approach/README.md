@@ -20,11 +20,13 @@ While it is true that it is not mandatory to follow the standards proposed by GS
 3. Introduce completely new articles/sub-articles that respond to particular interests by constituting **customized texts**.
 4. Specify the value of certain **variables** that are found in a certain text, such as dates, names of entities, amounts and others.
 
-However, a successful **Roaming Agreement** drafting goes through a complex negotiation process in which, currently the parties, i.e. the Mobile Network Operators (MNOs), still use asynchronous flows such as email or even regular mail for information exchange. Since these processes lack transparency, which can result in the violation of the **Roaming Agreement** by MNOs, it is necessary to provide a transparent digitization system for **Roaming Agreement** drafting negotiations. For this reason, this paper proposes the use of *Natural Language Processing (NLP)* as an engine to digitize the legal text in the **Romaing Agreements**. This NLP engine analyzes the different articles and sub-articles of the **Romaing Agreements** determining the existence of *variables*, *variations*, *standard clauses* and *customized texts* in the text.
+However, a successful **Roaming Agreement** drafting goes through a complex negotiation process in which, currently the parties, i.e. the Mobile Network Operators (MNOs), still use asynchronous flows such as email or even regular mail for information exchange. Since these processes lack transparency, which can result in the violation of the **Roaming Agreement** by MNOs, it is necessary to provide a transparent digitization system for **Roaming Agreement** drafting negotiations. For this reason, this paper proposes the use of *Natural Language Processing (NLP)* as an engine to digitize the legal text of the **Romaing Agreements**. The NLP engine analyzes the different articles and sub-articles of the **Romaing Agreements** determining the existence of *variables*, *variations*, *standard clauses* and *customized texts* in the text.
 
 The rest of this manuscript is structured as follows: Section 2 reviews both attempts at a transparent digitalization of **Roaming Agreement** and existing NLP-based digitization mechanisms as part of the **related work**. Section 3 estblishes the **designed methodology**. The implementation of our system are described in Section 4. Section 6 discusses the results of conducted experiments. Finally, the conclusions of the manuscript are included in Section 7. 
 
 ## Related work
+
+El related work se enfoca por un lado en analizar los intentos de digitalización transparente y por otro lado el análisis de los mecanismos de digitalización de textos usando técnicas NLP. En ese sentido la literatura científica existente se enfoca en la búsqueda de soluciones técnicas para habilitar interacciones entre LMNO y remote visitant de forma segura.
 
 Intentos de digitalización transparente
 
@@ -48,4 +50,5 @@ This research was funded by **Linux Foundation Mentorship Program** through the 
 1. I. Tanaka, "Volte roaming and interconnection standard technology", NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37-41, 2013.
 2. GSMA, “Direct Wholesale Roaming Access Agreement Version 2.7 08 December 2017,” London, 2019.
 3. ROCCO, “The International Roaming Agreement,” 2017. [Online]. Available: https://www.roccoresearch.com/portfolio-items/the-roaming-agreement/. [Accessed: 24-Ago-2021].
-4. I. Mauro and A. Arancibia, “International roaming explained,” London, UK, 2012.
+4. ROCCO, “What is ROAMING HUBBING?,” 2017. [Online]. Available: https://www.roccoresearch.com/portfolio-items/roaming-hubbing/. [Accessed: 24-Ago-2021].
+5. ROCCO, “What is ROAMING HUBBING?,” 2017. [Online]. Available: https://www.roccoresearch.com/portfolio-items/roaming-hubbing/. [Accessed: 24-Ago-2021].
