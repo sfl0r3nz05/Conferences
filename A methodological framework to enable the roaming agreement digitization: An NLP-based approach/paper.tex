@@ -32,17 +32,17 @@ In order to standardize technical, commercial and legal aspects of RA, the GSM A
 While it is true that it is not mandatory to follow the standards proposed by GSMA, according to authoritative voices in the field of negotiating RA drafting, most MNOs follow them strictly \cite{b4}. Therefore, a first point to consider in the RA drafting is how far it is deviated from the GSMA's proposed standards. Thus, during the drafting process of the agreement, the parties should analyze the sub-articles contained in the GSMA standard templates to determine whether:
 
 \begin{enumerate}
-\item Specify the value of certain variables that are found in a certain text, such as dates, names of entities, amounts and others.
+\item Specify the value of certain \textit{variables} that are found in a certain text, such as dates, names of entities, amounts and others.
 
-\item Leave an article/sub-article as found in the template thereby establishing a standard clause.
+\item Leave an article/sub-article as found in the template thereby establishing a \textit{standard clause}.
 
-\item Introduce certain variations in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies and so on with respect to the original text, i.e., the GSMA templates.
+\item Introduce certain \textit{variations} in the articles/sub-articles, by changing \textit{variables}, e.g., MNO, dates, penalties, currencies and so on with respect to the original text, i.e., the GSMA templates.
 
-\item Introduce completely new articles/sub-articles that respond to particular interests by constituting customized texts.
+\item Introduce completely new articles/sub-articles that respond to particular interests by constituting \textit{customized texts}.
 
 \end{enumerate}
 
-However, a successful RA drafting goes through a complex negotiation process in which, currently the parties, i.e. the Mobile Network Operators (MNOs), still use asynchronous flows such as email or even regular mail for information exchange. Since these processes lack transparency, which can result in the violation of the RA by MNOs, it is necessary to provide a transparent digitization system for RA drafting negotiations. For this reason, this paper proposes the use of Natural Language Processing (NLP) as an engine to digitize the legal text as a starting point of a RA transparent drafting process. The NLP engine analyzes the different articles and sub-articles of the RA determining the existence of variables, variations, standard clauses and customized texts in the text. For this purpose, on the one hand, NLP techniques such as Named Entity Recognition (NER) and Part of Speech (POS) are applied from an unstructured data information discovery tools such as Amazon Comprehend and on the other hand, a comprehensive comparison between texts is established based on similarity determination techniques. Both techniques are integrated as part of the development of an unstructured text processing tool that integrates an specific methodology for the use case, i.e., a transparent digitization of roaming agreements.
+However, a successful RA drafting goes through a complex negotiation process in which, currently the parties, i.e. the Mobile Network Operators (MNOs), still use asynchronous flows such as email or even regular mail for information exchange. Since these processes lack transparency, which can result in the violation of the RA by MNOs, it is necessary to provide a transparent digitization system for RA drafting negotiations. For this reason, this paper proposes the use of Natural Language Processing (NLP) as an engine to digitize the legal text as a starting point of a RA transparent drafting process. The NLP engine analyzes the different articles and sub-articles of the RA determining the existence of variables, variations, standard clauses and customized texts in the text. For this purpose, on the one hand, NLP techniques such as Named Entity Recognition (NER) and Part of Speech (POS) are applied from an unstructured data information discovery tools such as \textit{Amazon Comprehend} and on the other hand, a comprehensive comparison between texts is established based on \textit{similarity} determination techniques. Both techniques are integrated as part of the development of an unstructured text processing tool that integrates an specific methodology for the use case, i.e., a transparent digitization of roaming agreements.
 
 The rest of this manuscript is structured as follows: Section 2 reviews both attempts at a transparent digitization of Roaming Agreement and existing NLP-based digitization mechanisms as part of the related work. Section 3 establishes the designed methodology. The implementation of our system are described in Section 4. Section 6 discusses the results of conducted experiments. Finally, the conclusions of the manuscript are included in Section 7.
 
@@ -52,13 +52,16 @@ Both in the scientific literature and in business environments there are importa
 
 Additionally, the scientific literature addresses text processing systems based on nlp techniques in domains such as judiciary. Thus, the reference \cite{b9} addresses the process of digitization in the judicial sectors from archives of court records for which the authors have designed a textual analysis tool that includes grammatical analysis of documents in English based on NLP techniques. This linguistic analysis attempts to find the appropriate meaning of terms within a document. In addition, the reference \cite{b8} applies NLP-based processing techniques for information retrieval from spreadsheets and describes technologies for storing and retrieving database information. NLP techniques such as sentence tokenization, word tokenization, removing stopwords and lemmatization are part of the parsing stage of the work. Finally, authors of reference \cite{b10} propose a model for implementing sentimental analysis using Amazon Comprehend. This system performs an audio-to-text transcription and then performs the processing of the obtained text. Although these studies  constitute a relevant part of related work, e.g., by integrating useful tools such as Amazon Comprehend or detailing the use of techniques such as tokenization, the scientific literature does not address scenarios for the telecom field and even less in the context of a transparent digitization of the roaming agreement. Therefore, we can affirm that our work introduces a topic with a high degree of novelty.
 
-\section{Designed Methodology}
-Before you begin to format your paper, first write and save the content as a
+\section{NLP Engine methodology}
+Overall, the logic designed for the NLP engine follows two approaches: detection and comparison. Detection represents the capability to locate \textit{variables} in a text file, i.e., the Roaming Agreement. Comparison represents the capacity to find \textit{similarities} and differences between the sub-articles present in the Roaming Agreement with respect to the sub-articles present in the GSMA standard template. For example, while an almost total coincidence between texts at the sub-article level represents a \textit{standard clause}, an almost null coincidence between texts (or simply the non-existence of a sub-article of the GSMA standard template in the Roaming Agreement) represents a \textit{customized text}. Thus, the intermediate case is represented by the \textit{variation} in which there is a high coincidence between sub-articles and the existing differences are given by the presence of \textit{variables} such as the name of the MNO and the start date of the agreement. The technologies that enable both detection and comparison are discussed below as part of the \textit{background}.
 
 \subsection{Amazon comprehend}\label{AA}
 Define abbreviations and acronyms the first time they are used in the text
 
-\subsection{Smilarity Analysis}
+\subsection{Similarity Analysis}
+Define abbreviations and acronyms the first time they are used in the text
+
+\subsection{Designed Methodology}
 Define abbreviations and acronyms the first time they are used in the text
 
 \section{Implemented System}
