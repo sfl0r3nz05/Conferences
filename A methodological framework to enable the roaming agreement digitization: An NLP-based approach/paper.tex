@@ -62,10 +62,20 @@ In short, \textit{Amazon Comprehend} is a service that uses NLP techniques to ex
 Similarity is used to compare different types of data, so it is a resource used for pattern classification, clustering and information retrieval problems \cite{b12}. Therefore, the similarity falls within the comparison approach. In this regard, our work distinguishes between two types of similarities: Jaccard similarity and Cosine similarity \cite{b13}. While the first one is established as the size of the intersection divided by the size of the union of two sets, the second one implies the determination of the cosine of the angle between two vectors.
 
 \subsection{Designed Methodology}
-Define abbreviations and acronyms the first time they are used in the text
+Define abbreviations and acronyms the first time they are used in the text.
 
 \section{Implemented System}
-Define abbreviations and acronyms the first time they are used in the text
+The Fig.~\ref{fig1} shows a overall architecture of the NLP Engine that integrates over a docker infrastructure, establishing as inputs the Roaming Agreement text file, as well as the GSMA standard templates; as processing layer the logic associated to the NLP Engine and as output the classification of sub-articles as \textit{standard clauses}, \textit{customized texts} and \textit{variations} depending of the \textit{variables} detection.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.25\textwidth]{images/NLP_Engine.png}}
+\caption{NLP Engine overall architecture.}
+\label{fig1}
+\end{figure}
+
+La primera consideración entorno a la arquitectura desarrollada radica en que el motor NLP se ha desarrollado como un Software Development Kit y por consiguiente este debe ser descagado y ejecutado desde un entrypoint. 
+
+En lo relativo a la implementación de la similaridad de Jaccard y a la similaridad del coseno.
 
 \section{Discussion of Results}
 Define abbreviations and acronyms the first time they are used in the text
