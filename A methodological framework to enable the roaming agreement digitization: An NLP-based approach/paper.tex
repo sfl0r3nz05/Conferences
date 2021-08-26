@@ -78,7 +78,21 @@ The Fig.~\ref{fig1} shows a overall architecture of the NLP Engine that integrat
 The first consideration regarding the developed architecture is that the NLP engine has been developed as a Software Development Kit and therefore it must be downloaded and executed from an entry point. 
 
 \section{Discussion of Results}
-Define abbreviations and acronyms the first time they are used in the text
+Since PDF, i.e., input files of the NLP Engine consist of unstructured text and e.g., undesired characters may remain despite parsing of the text, it is mandatory determine the \textit{accuracy} of the results obtained once the file with the classification of articles/sub-articles has been populated. For this purpose, two types of experiments have been conducted to determine the \textit{accuracy} of the results. On the one hand, a verification based on human eye inspection and on the other hand, a verification based on symbol comparison. The tests will be performed on two Roaming Agreements sample of the MNOs Proximus and Orange. The experiments conducted to determine the accuracy are described below, while the results obtained are analyzed.
+
+\subsection{Accuracy determination based on human eye inspection}
+The first accuracy analysis involves randomly selecting 5 articles from each of the sample Roaming Agreements and performing a visual inspection (human-eye inspection) to determine the number of variables, variations, standard clauses and custom texts that exist. The results obtained are then compared with the values populated in the article and sub-article classification file for the same articles. Considering that the results obtained from the visual inspection constitute the observations and the values collected from the article and sub-article classification file constitute the predicted values, the confusion matrices obtained are as follows:
+
+\subsection{Accuracy determination based on symbol comparison}
+The second accuracy analysis involves establishing a comparison between the sub-articles populated in the output file with respect to the sub-articles existing in the input file containing the Roaming Agreements. For that purpose, the text comparison tool [Countwordsfree](https://countwordsfree.comcomparetexts) has been used manually copying sub-article by sub-article. For each sub-article is determined:
+ \begin{enumerate}
+\item Common percentage of words between compared sub-articles.
+\item Difference percentage of words between compared sub-articles.
+\item Common words between compared sub-articles.
+\item Difference words between compared sub-articles.
+\end{enumerate}
+
+Considering that for each sub-article the characters that determine the differences have been analyzed, determining that they are mostly end-of-line characters, quotation marks, parentheses and brackets, the threshold of the common percentage of words is determined as the worst case, i.e., where a greater combination of these characters appears. From the threshold, the rest of the cases found with lower common percentage of words will be considered failures.
 
 \section{Conclusions}
 Define abbreviations and acronyms the first time they are used in the text 
