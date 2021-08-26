@@ -67,15 +67,15 @@ Similarity is used to compare different types of data, so it is a resource used 
 Define abbreviations and acronyms the first time they are used in the text.
 
 \section{Implemented System}
-The Fig.~\ref{fig1} shows the overall architecture of the NLP engine integrated in a docker infrastructure, which establishes as inputs the Roaming Agreement text file, as well as the GSMA standard templates; as processing layer the logic associated to the NLP Engine and as output the classification of sub-articles as \textit{standard clauses}, \textit{customized texts} and \textit{variations} depending of the \textit{variables} detection.
+The Fig.~\ref{fig1} shows the overall architecture of the NLP engine integrated in a docker infrastructure that includes 3 parts. First, the input files include the Roaming Agreement text file as well as the GSMA standard templates. The processing layer includes the logic associated with the NLP engine, i.e. the implementation of the designed methodology. The output file constitutes a JSON file populated with the classification of articles and sub-articles as \textit{standard clauses}, \textit{customized texts} and \textit{variations}. Each article includes the set of \textit{variables} it contains and each sub-article contains the specific \textit{variable} detected as long as it has been classified as a variation.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.2\textwidth]{images/NLP_Engine.png}}
+\centerline{\includegraphics[width=0.23\textwidth]{images/NLP_Engine.png}}
 \caption{NLP Engine overall architecture.}
 \label{fig1}
 \end{figure}
 
-The first consideration regarding the developed architecture is that the NLP engine has been developed as a Software Development Kit and therefore it must be downloaded and executed from an entry point. 
+Regarding the input and output files, these are associated to the container through volumes. In addition, the NLP Engine has been developed as a Python v3.8 based library and therefore must be imported and run from an entry point. Although the NLP Engine constitutes a library, it must in turn integrate other libraries, among which boto3 \cite{boto3}. Boto3 is an Software Development Kit (SDK) for Python, created and supported by Amazon Web Services (AWS). The NLP Engine imports the service associated to Amazon Comprehend. Other library imported into NLP Engine library is PyMuPDF (\cite{PyMuPDF}), which is used by the NLP Engine to extract headers and footers from the PDF files. Therefore, the docker image built for the NLP Engine must not only install the NLP Engine library, but must also install the libraries it imports.
 
 \section{Discussion of Results}
 Since PDF, i.e., input files of the NLP Engine consist of unstructured text and e.g., undesired characters may remain despite parsing of the text, it is mandatory determine the \textit{accuracy} of the results obtained once the file with the classification of articles/sub-articles has been populated. For this purpose, two types of experiments have been conducted to determine the \textit{accuracy} of the results. On the one hand, a verification based on human eye inspection and on the other hand, a verification based on symbol comparison. The tests will be performed on two Roaming Agreements sample of the MNOs Proximus and Orange. The experiments conducted to determine the accuracy are described below, while the results obtained are analyzed.
