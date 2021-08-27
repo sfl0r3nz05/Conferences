@@ -93,65 +93,67 @@ Regarding the input and output files, these are associated to the container thro
 Since PDF, i.e., input files of the NLP Engine architecture consist of unstructured text and for instance, undesired characters may remain despite text parsing, it is mandatory determine the \textit{accuracy} of the results obtained once the output JSON file has been populated. For this purpose, two types of experiments have been conducted to determine the \textit{accuracy} of the results. On the one hand, a simple inspection at sub-article level and on the other hand, a verification based on symbol comparison. The tests will be performed on two Roaming Agreements sample of the MNOs Proximus and Orange \cite{proximus}. Each experiment is described below and the results obtained are discussed in the same section.
 
 \subsection{Accuracy determination based on a simple inspection at sub-article level}
-The first accuracy analysis consists of determining by simple inspection, i.e., human-eye inspection, whether each sub-article of the roaming agreement constitutes a variation, a standard clause or a customized text with respect to the GSMA standard template. Additionally, the detected variables are analyzed. The results obtained are then compared with the values populated in the NLP Engine output file, for the same articles. Considering that the results obtained from the simple inspection constitute the observations and the values collected from the article and sub-article classification file constitute the predicted values, it is considered for each item, i.e., variable, variation, standard clause and custom text. The following confusion matrices allow us to analyze the results for each roaming agreement:
+The first accuracy analysis consists of determining by simple inspection, i.e., human-eye inspection, whether each sub-article of the roaming agreement constitutes a variation, a standard clause or a customized text with respect to the GSMA standard template. Additionally, the detected variables are analyzed. The results obtained are then compared with the values populated in the NLP Engine output file, for the same articles. Considering that the results obtained from the simple inspection constitute the observations and the values collected from the article and sub-article classification file constitute the predicted values, it is considered for each item, i.e., variable, variation, standard clause and custom text. The following confusion matrices allow us to analyze the results for each sample roaming agreements. In this regard, the confusion matrix in the Table~\ref{table1} indicates that the \textit{accuracy} at which the 72 sub-articles analyzed are satisfactorily identified by the NLP Engine as \textit{standard clauses}, \textit{variations} or \textit{customized texts} is acceptable. Proof of this is the fact that the main diagonal of the matrix concentrates the highest number of True Positives. Therefore, it is possible to affirm that the predictive capacity of the NLP Engine for the Proximus sample roaming agreement is satisfactory. 
 
 \begin{table}[htbp]
-\caption{Confusion Matrix for Proximus Roaming Agreement}
+\caption{Confusion Matrix for Proximus Roaming Agreement.}
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
-\textbf{n = 100} & \textbf{\textit{stdClause}}& \textbf{\textit{variation}}& \textbf{\textit{customText}} \\
+\textbf{n = 72} & \textbf{\textit{stdClause}}& \textbf{\textit{variation}}& \textbf{\textit{customText}} \\
 \hline
-\textbf{\textit{stdClause}}& 57 & 2 & 5 \\
+\textbf{\textit{stdClause}}& 21 & 3 & 1 \\
 \hline
-\textbf{\textit{variation}}& 8 & 31 & 0 \\
+\textbf{\textit{variation}}& 2 & 35 & 4 \\
 \hline
-\textbf{\textit{customText}}& 7 & 9 & 25 \\
+\textbf{\textit{customText}}& 0 & 1 & 5 \\
 \hline
 \end{tabular}
-\label{tab1}
+\label{table1}
 \end{center}
 \end{table}
 
-\begin{table}[]
-\caption{Confusion Matrix for Orange Roaming Agreement}
+The Table~\ref{table2}, as well as Table~\ref{table1}, shows satisfactory results for the NLP Engine's predictive capability, i.e., regarding the \textit{accuracy} at which the NLP Engine identifies properly the sub-articles as \textit{standard clauses}, \textit{variations} or \textit{customized texts} for the Orange sample roaming agreement. Using the same evaluation criteria, it is observed how the main diagonal of the confusion matrix in Table~\ref{table2} concentrates the highest number of True Positive.
+
+\begin{table}[htbp]
+\caption{Confusion Matrix for Orange Roaming Agreement.}
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
-\textbf{n = 100} & \textbf{\textit{stdClause}}& \textbf{\textit{variation}}& \textbf{\textit{customText}} \\
+\textbf{n = 86} & \textbf{\textit{stdClause}}& \textbf{\textit{variation}}& \textbf{\textit{customText}} \\
 \hline
-\textbf{\textit{stdClause}}& 57 & 2 & 5 \\
+\textbf{\textit{stdClause}}& 14 & 0 & 1 \\
 \hline
-\textbf{\textit{variation}}& 8 & 31 & 0 \\
+\textbf{\textit{variation}}& 1 & 8 & 0 \\
 \hline
-\textbf{\textit{customText}}& 7 & 9 & 25 \\
+\textbf{\textit{customText}}& 4 & 1 & 57 \\
 \hline
 \end{tabular}
-\label{tab1}
+\label{table2}
 \end{center}
 \end{table}
 
 \subsection{Accuracy determination based on symbol comparison}
-The second accuracy analysis involves establishing a comparison between the sub-articles populated in the output file with respect to the sub-articles existing in the input file containing the Roaming Agreements. For that purpose, the text comparison tool Countwordsfree(\cite{countwordsfree}) is used manually copying sub-article by sub-article. For each sub-article is determined:
+The second accuracy analysis involves establishing a comparison between the sub-articles populated in the output file with respect to the sub-articles existing in the input file containing the Roaming Agreements. This comparison is performed at the symbol level, considering the order of appearance of each symbol. For that purpose, the text comparison tool Countwordsfree (\cite{countwordsfree}) is used manually copying sub-article by sub-article. For each sub-article is determined:
 
- \begin{enumerate}
-\item Common percentage of words between compared sub-articles.
-\item Difference percentage of words between compared sub-articles.
-\item Common words between compared sub-articles.
-\item Difference words between compared sub-articles.
+\begin{enumerate}
+\item Common percentage of symbols between compared sub-articles.
+\item Difference percentage of symbols between compared sub-articles.
+\item Common symbols between compared sub-articles.
+\item Difference symbols between compared sub-articles.
 \end{enumerate}
 
-The following clustered column chart allow us to analyze the results for each roaming agreement:
+The following radar chart allow us to analyze the results for each roaming agreement. Fig.~\ref{fig3} shows a comparison in terms of the common percentage of symbols between compared sub-articles for the Proximus sample roaming agreement. The conclusion that can be reached by simple inspection is that only 11 of the 72 analyzed sub-articles are affected, mostly by the introduction of undesired characters when output file was populated. Similarly, Fig.~\ref{fig4} shows a comparison in terms of the common percentage of words between the sub-articles compared for the Orange sample roaming agreement. In this case, only 7 of the 86 analyzed sub-articles are affected by the introduction of unwanted characters at the time of popularization in the output file, thus improving the results obtained for the Proximus sample roaming agreement.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.23\textwidth]{images/NLP_Engine.png}}
-\caption{NLP Engine overall architecture.}
+\centerline{\includegraphics[width=0.43\textwidth]{images/Proximus.png}}
+\caption{Common percentage of symbols for Proximus Roaming Agreement.}
 \label{fig3}
 \end{figure}
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=0.23\textwidth]{images/NLP_Engine.png}}
-\caption{NLP Engine overall architecture.}
+\centerline{\includegraphics[width=0.43\textwidth]{images/Orange.png}}
+\caption{NLP Engine overall architecture for Orange Roaming Agreement.}
 \label{fig4}
 \end{figure}
 
