@@ -33,14 +33,14 @@ NLP, Roaming Agreement, Amazon Comprehend, Similarity
 \end{IEEEkeywords}
 
 \section{Introduction}
-The roaming service maintains the persistent connectivity of subscribers in different networks and locations. Roaming describes the capability of a subscriber to access mobile services offered by the visited public mobile network (VPMN) through the home public mobile network (HPMN), when roaming outside the coverage range of the HPMN \cite{Tanaka2013}. However, before ensuring persistent connectivity the Mobile Network Operators (MNOs) must reach an agreement regarding the technical, commercial and legal relationships known as the Roaming Agreement (RA).
+The roaming service maintains the persistent connectivity of subscribers in different networks and locations. Roaming describes the capability of a subscriber to access mobile services offered by the visited public mobile network (VPMN) through the home public mobile network (HPMN), when roaming outside the coverage range of the HPMN \cite{Tanaka2013}. However, before ensuring persistent connectivity in VPMN the Mobile Network Operators (MNOs) must reach an agreement regarding the technical, commercial and legal relationships known as the Roaming Agreement (RA). In this regard, it is possible to establish 3 stages within the RA: \textit{drafting}, \textit{testing} and \textit{implementation}.
 
 In order to standardize technical, commercial and legal aspects of RA, the GSM Association broadly outlines the content of such RA in standardized form for its members \cite{Ferwerda2018}. Reference \cite{ROCCO2017} provides a list of the most commonly used GSMA standards, which are summarized bellow: (1) AA.12 constitutes the permanent reference document; (2) AA.13 contains the common annexes with operational information (e.g., information on tap file, billing data, settlement procedure, customer care, fraud, etc.) and (3) AA.14 involves the individual annexes containing information about the operator (e.g., contact details of the roaming team, fraud team, IREG team, TADIG team, etc.).
 
 While it is true that it is not mandatory to follow the standards proposed by GSMA, according to authoritative voices in the field of negotiating RA drafting, most MNOs follow them strictly \cite{ROCCO2017a}. Therefore, a first point to consider in the RA drafting is how far it is deviated from the GSMA's proposed standards. Thus, during the drafting process of the agreement, the parties should analyze the sub-articles contained in the GSMA standard templates to determine whether:
 
 \begin{enumerate}
-\item Specify the value of certain \textit{variables} that are found in a certain text, such as dates, names of entities, amounts and others.
+\item Specify the value of certain \textit{variables} that are found in a certain text, such as dates, names of MNOs, locations and others.
 
 \item Leave an article/sub-article as found in the template thereby establishing a \textit{standard clause}.
 
@@ -50,7 +50,7 @@ While it is true that it is not mandatory to follow the standards proposed by GS
 
 \end{enumerate}
 
-However, a successful RA drafting goes through a complex negotiation process in which, currently the parties, i.e. the MNOs, still use asynchronous flows such as email or even regular mail for information exchange. Since these processes lack transparency, which can result in the violation of the RA by MNOs, it is necessary to provide a transparent digitalization system for RA drafting negotiations. For this reason, this paper proposes the use of Natural Language Processing (NLP) as an engine to digitize the legal text as a starting point of a digitization process of negotiation procedures for a transparent drafting of Roaming Agreements. The NLP engine analyzes articles and sub-articles of the RA determining the existence of variables, variations, standard clauses and customized texts. For this purpose, the NLP engine relies on the one hand, on NLP techniques such as Named Entity Recognition (NER) and Part of Speech (POS) using the unstructured data information discovery tool \textit{Amazon Comprehend} and, on the other hand, by establishing an comprehensive comparison between texts based on \textit{similarity} determination techniques. The procedures for integrating tools, NLP techniques, pre-processing and post-processing constitute a methodological framework designed for the use case and included within an unstructured text processing tool. This article includes not only the design phase, but also the implementation and evaluation of the tool.
+However, a successful RA drafting goes through a complex negotiation process in which, currently the parties, i.e. the MNOs, still use asynchronous flows such as email or even regular mail for information exchange. Since these processes lack transparency, which can result in the violation of the RA by MNOs, it is necessary to provide a transparent digitalization system for RA drafting negotiations. For this reason, this paper proposes the use of Natural Language Processing (NLP) as a legal text digitization engine. This NLP engine constitutes the starting point for the digitalization of the negotiation process towards a transparent drafting of Roaming Agreements. The NLP engine analyzes articles and sub-articles of the RA determining the existence of variables, variations, standard clauses and customized texts. For this purpose, the NLP engine relies on the one hand, on NLP techniques such as Named Entity Recognition (NER) and Part of Speech (POS) using the unstructured data information discovery tool \textit{Amazon Comprehend} and, on the other hand, by establishing an comprehensive comparison between texts based on \textit{similarity} determination techniques. The procedures for integrating tools, NLP techniques, pre-processing and post-processing constitute a methodological framework designed for the use case and included within an unstructured text processing tool. This article includes not only the design phase, but also the implementation and evaluation of the tool.
 
 The rest of this manuscript is structured as follows: Section 2 reviews both the attempts at transparent digitalization of roaming agreements and existing NLP techniques-based text processing systems as part of related work. Section 3 establishes the designed methodology. The implementation of our system are described in Section 4. Section 5 discusses the results of conducted experiments. Finally, the conclusions of the manuscript are included in Section 6.
 
@@ -67,7 +67,7 @@ Overall, the logic designed for the NLP engine follows two approaches: \textit{d
 In short, \textit{Amazon Comprehend} is a service that uses NLP techniques to extract insights about the content document by recognizing  the  entities,  key  phrases,  language,  sentiments,  and  other  common  elements  in  a  text \cite{AWS2021}. The capabilities that \textit{Amazon Comprehend} integrates are key in the \textit{detection} approach.
 
 \subsection{Similarity Analysis}
-Similarity is used to compare different types of data, so it is a resource used for pattern classification, clustering and information retrieval problems \cite{7429408}. Therefore, the similarity falls within the comparison approach. In this regard, our work distinguishes between two types of similarities: Jaccard similarity and Cosine similarity \cite{Gupta2018}. While the first one is established as the size of the intersection divided by the size of the union of two sets, the second one implies the determination of the cosine of the angle between two vectors.
+Similarity is used to compare different types of data, so it is a resource used for pattern classification, clustering and information retrieval problems \cite{7429408}. Therefore, the \textit{similarity} falls within the comparison approach. In this regard, our work uses  \textit{Jaccard's similarity} which is defined as the size of the intersection divided by the size of the union of two sets \cite{Gupta2018}.
 
 \subsection{Designed Methodology}
 The flow chart in Fig.~\ref{fig1} is a general scheme of the methodology designed for the NLP Engine, which will be explained in detail below.
@@ -87,13 +87,49 @@ The Fig.~\ref{fig2} shows the overall architecture of the NLP engine integrated 
 \label{fig2}
 \end{figure}
 
-Regarding the input and output files, these are associated to the container through volumes. In addition, the NLP Engine has been developed as a Python v3.8 based library and therefore must be imported and run from an entry point. Although the NLP Engine constitutes a library, it must in turn integrate other libraries, among which boto3 \cite{boto3}. Boto3 is an Software Development Kit (SDK) for Python, created and supported by Amazon Web Services (AWS). The NLP Engine imports the service associated to Amazon Comprehend. Other library imported into NLP Engine library is PyMuPDF (\cite{PyMuPDF}), which is used by the NLP Engine to extract headers and footers from the PDF files. Therefore, the docker image built for the NLP Engine must not only install the NLP Engine library, but must also install the libraries it imports.
+Regarding the input and output files, these are associated to the container through volumes. In addition, the NLP Engine has been developed as a Python v3.8 based library and therefore must be imported and run from an entry point. Although the NLP Engine constitutes a library, it must in turn integrate other libraries, among which boto3 \cite{boto3}. Boto3 is an Software Development Kit (SDK) for Python, created and supported by Amazon Web Services (AWS). The NLP Engine imports the service associated to Amazon Comprehend. Other library imported into NLP Engine library is PyMuPDF (\cite{PyMuPDF}), which is used by the NLP Engine to extract headers and footers from the PDF files. Therefore, the docker image built for the NLP Engine must not only install the NLP Engine library, but must also install the libraries it imports. Regarding the implementation of the \textit{similarity} it should be noted that it has been implemented in a pluggable way, therefore at code level it is easy to change the \textit{Jaccard's similarity} for another one, e.g., cosine similarity \cite{Gupta2018}.
 
 \section{Discussion of Results}
 Since PDF, i.e., input files of the NLP Engine architecture consist of unstructured text and for instance, undesired characters may remain despite text parsing, it is mandatory determine the \textit{accuracy} of the results obtained once the output JSON file has been populated. For this purpose, two types of experiments have been conducted to determine the \textit{accuracy} of the results. On the one hand, a simple inspection at sub-article level and on the other hand, a verification based on symbol comparison. The tests will be performed on two Roaming Agreements sample of the MNOs Proximus and Orange \cite{proximus}. Each experiment is described below and the results obtained are discussed in the same section.
 
 \subsection{Accuracy determination based on a simple inspection at sub-article level}
 The first accuracy analysis consists of determining by simple inspection, i.e., human-eye inspection, whether each sub-article of the roaming agreement constitutes a variation, a standard clause or a customized text with respect to the GSMA standard template. Additionally, the detected variables are analyzed. The results obtained are then compared with the values populated in the NLP Engine output file, for the same articles. Considering that the results obtained from the simple inspection constitute the observations and the values collected from the article and sub-article classification file constitute the predicted values, it is considered for each item, i.e., variable, variation, standard clause and custom text. The following confusion matrices allow us to analyze the results for each roaming agreement:
+
+\begin{table}[htbp]
+\caption{Confusion Matrix for Proximus Roaming Agreement}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{n = 100} & \textbf{\textit{stdClause}}& \textbf{\textit{variation}}& \textbf{\textit{customText}} \\
+\hline
+\textbf{\textit{stdClause}}& 57 & 2 & 5 \\
+\hline
+\textbf{\textit{variation}}& 8 & 31 & 0 \\
+\hline
+\textbf{\textit{customText}}& 7 & 9 & 25 \\
+\hline
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+
+\begin{table}[]
+\caption{Confusion Matrix for Orange Roaming Agreement}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{n = 100} & \textbf{\textit{stdClause}}& \textbf{\textit{variation}}& \textbf{\textit{customText}} \\
+\hline
+\textbf{\textit{stdClause}}& 57 & 2 & 5 \\
+\hline
+\textbf{\textit{variation}}& 8 & 31 & 0 \\
+\hline
+\textbf{\textit{customText}}& 7 & 9 & 25 \\
+\hline
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
 
 \subsection{Accuracy determination based on symbol comparison}
 The second accuracy analysis involves establishing a comparison between the sub-articles populated in the output file with respect to the sub-articles existing in the input file containing the Roaming Agreements. For that purpose, the text comparison tool Countwordsfree(\cite{countwordsfree}) is used manually copying sub-article by sub-article. For each sub-article is determined:
@@ -105,7 +141,19 @@ The second accuracy analysis involves establishing a comparison between the sub-
 \item Difference words between compared sub-articles.
 \end{enumerate}
 
-The following radar plots allow us to analyze the results for each roaming agreement:
+The following clustered column chart allow us to analyze the results for each roaming agreement:
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.23\textwidth]{images/NLP_Engine.png}}
+\caption{NLP Engine overall architecture.}
+\label{fig3}
+\end{figure}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.23\textwidth]{images/NLP_Engine.png}}
+\caption{NLP Engine overall architecture.}
+\label{fig4}
+\end{figure}
 
 \section{Conclusions}
 Considering that the proposed NLP Engine constitutes a part of a project that has as main objective of transforming the current Telecommunication Roaming Agreement drafting and negotiation process into a digitalized version based on the transparency promoted by blockchain technology, future research works include the design, development and evaluation of the rest of the sub-systems, as well as the integration of the NLP Engine part. 
