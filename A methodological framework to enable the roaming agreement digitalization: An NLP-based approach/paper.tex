@@ -72,6 +72,10 @@ Similarity is used to compare different types of data, so it is a resource used 
 \subsection{Designed Methodology}
 The flow chart in Fig.~\ref{fig1} is a general scheme of the methodology designed for the NLP Engine, which will be explained in detail below.
 
+The starting point of the methodology is the detection of PDF files. The file name is used as one of the identifiers of the output file. The next step is to find similarities in document texts so that headers and footers can be detected. The resources to use to detect are font size and font weight. Once the PDF format has been converted to text, headers and footers as well as undesired characters are removed. Once the parsing phase has been completed, on the one hand, \textit{detection} and on the other hand, \textit{comparison} is performed.
+
+The detection phase presents a requirement associated with the Amazon Comprehend tool regarding the number of symbols to be sent via REST API. For this reason, the text is segmented into 100 symbols by 100 symbols.
+
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=0.4\textwidth]{images/methodology.png}}
 \caption{Overview of the designed methodology.}
