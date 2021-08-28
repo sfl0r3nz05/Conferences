@@ -1,9 +1,9 @@
 <!-- Styles -->
 <style>
   #chartdiv {
-    width: 100%;
-    height: 700px;
-    font-size: 8pt
+    width: 90%;
+    height: 4900px;
+    font-size: 75pt
   }
 </style>
 
@@ -20,11 +20,8 @@
     am4core.useTheme(am4themes_animated);
     // Themes end
 
-    /**
-     * Chart design inspired by Nicolas Rapp: https://nicolasrapp.com/studio/
-     */
-
     var chart = am4core.create("chartdiv", am4charts.RadarChart);
+    chart.exporting.menu = new am4core.ExportMenu();
 
     chart.data = [
       {
@@ -94,8 +91,8 @@
       },
       {
         category: "3.5",
-        value1: 98.14,
-        value2: 98.14
+        value1: 78.14,
+        value2: 78.14
       },
       {
         category: "3.6",
@@ -144,8 +141,8 @@
       },
       {
         category: "3.15",
-        value1: 96.73,
-        value2: 96.73
+        value1: 76.73,
+        value2: 76.73
       },
       {
         category: "3.16",
@@ -163,7 +160,17 @@
         value2: 97.94
       },
       {
+        category: "5.2",
+        value1: 77.86,
+        value2: 77.86
+      },
+      {
         category: "6.1",
+        value1: 68.07,
+        value2: 68.07
+      },
+      {
+        category: "6.2",
         value1: 98.07,
         value2: 98.07
       },
@@ -173,34 +180,84 @@
         value2: 96.78
       },
       {
+        category: "7.2",
+        value1: 98.17,
+        value2: 98.17
+      },
+      {
         category: "8.1",
         value1: 96.73,
         value2: 96.73
       },
       {
         category: "9.1",
-        value1: 94.25,
-        value2: 94.25
+        value1: 97.65,
+        value2: 97.65
       },
       {
         category: "10.1",
-        value1: 91.43,
-        value2: 91.43
+        value1: 98.43,
+        value2: 98.43
       },
       {
         category: "11.1",
+        value1: 99.68,
+        value2: 99.68
+      },
+      {
+        category: "11.2",
+        value1: 63.13,
+        value2: 63.13
+      },
+      {
+        category: "11.3",
         value1: 93.68,
         value2: 93.68
       },
       {
+        category: "11.4",
+        value1: 97.48,
+        value2: 97.48
+      },
+      {
+        category: "11.5",
+        value1: 96.61,
+        value2: 96.61
+      },
+      {
+        category: "11.6",
+        value1: 99.23,
+        value2: 99.23
+      },
+      {
+        category: "11.7",
+        value1: 97.38,
+        value2: 97.38
+      },
+      {
         category: "12.1",
-        value1: 96.06,
-        value2: 96.06
+        value1: 98.06,
+        value2: 98.06
+      },
+      {
+        category: "12.2",
+        value1: 71.82,
+        value2: 71.82
+      },
+      {
+        category: "12.3",
+        value1: 98.41,
+        value2: 98.41
       },
       {
         category: "13.1",
-        value1: 96.41,
-        value2: 96.41
+        value1: 99.01,
+        value2: 99.01
+      },
+      {
+        category: "13.2",
+        value1: 98.49,
+        value2: 98.49
       },
       {
         category: "14.1",
@@ -208,270 +265,363 @@
         value2: 75.21
       },
       {
+        category: "14.2",
+        value1: 95.78,
+        value2: 95.78
+      },
+      {
+        category: "14.3",
+        value1: 97.81,
+        value2: 97.81
+      },
+      {
+        category: "14.4",
+        value1: 97.51,
+        value2: 97.51
+      },
+      {
         category: "15.1",
-        value1: 94.97,
-        value2: 94.97
+        value1: 98.97,
+        value2: 98.97
+      },
+      {
+        category: "15.2",
+        value1: 94.37,
+        value2: 94.7
+      },
+      {
+        category: "15.3",
+        value1: 60.77,
+        value2: 60.77
+      },
+      {
+        category: "15.4",
+        value1: 99.07,
+        value2: 99.07
       },
       {
         category: "16.1",
-        value1: 96.59,
-        value2: 96.59
+        value1: 98.19,
+        value2: 98.19
+      },
+      {
+        category: "16.2",
+        value1: 99.25,
+        value2: 99.25
       },
       {
         category: "17.1",
-        value1: 97.71,
-        value2: 97.71
+        value1: 99.71,
+        value2: 99.71
       },
       {
         category: "18.1",
-        value1: 90.88,
-        value2: 90.88
+        value1: 70.88,
+        value2: 70.88
+      },
+      {
+        category: "18.2",
+        value1: 97.81,
+        value2: 97.81
       },
       {
         category: "19.1",
-        value1: 96.39,
-        value2: 96.39
+        value1: 98.39,
+        value2: 98.39
+      },
+      {
+        category: "19.2",
+        value1: 66.82,
+        value2: 66.80
+      },
+      {
+        category: "19.3",
+        value1: 99.24,
+        value2: 99.24
+      },
+      {
+        category: "19.4",
+        value1: 99.94,
+        value2: 99.94
       },
       {
         category: "20.1",
-        value1: 96.14,
-        value2: 96.14
+        value1: 97.55,
+        value2: 97.55
+      },
+      {
+        category: "20.2",
+        value1: 96.94,
+        value2: 96.94
+      },
+      {
+        category: "20.3",
+        value1: 61.09,
+        value2: 61.09
+      },
+      {
+        category: "20.4",
+        value1: 98.63,
+        value2: 98.63
+      },
+      {
+        category: "20.5",
+        value1: 99.34,
+        value2: 99.34
+      },
+      {
+        category: "20.6",
+        value1: 99.04,
+        value2: 99.04
+      },
+      {
+        category: "20.7",
+        value1: 97.59,
+        value2: 97.59
       },
       {
         category: "21.1",
-        value1: 95.34,
-        value2: 95.34
-      },
-      {
-        category: "22.1",
-        value1: 97.11,
-        value2: 97.11
+        value1: 96.20,
+        value2: 96.20
       }
     ];
 
 
-    chart.padding(0, 0, 0, 0);
-    chart.radarContainer.dy = 50;
-    chart.innerRadius = am4core.percent(50);
-    chart.radius = am4core.percent(100);
-    chart.zoomOutButton.padding(20, 20, 20, 20);
-    chart.zoomOutButton.margin(20, 20, 20, 20);
-    chart.zoomOutButton.background.cornerRadius(40, 40, 40, 40);
-    chart.zoomOutButton.valign = "bottom";
+chart.padding(0, 0, 0, 0);
+chart.radarContainer.dy = 350;
+chart.innerRadius = am4core.percent(65);
+chart.radius = am4core.percent(80);
+chart.zoomOutButton.padding(20,20,20,20);
+chart.zoomOutButton.margin(20,20,20,20);
+chart.zoomOutButton.background.cornerRadius(40,40,40,40);
+chart.zoomOutButton.valign = "bottom";
 
-    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-    categoryAxis.dataFields.category = "category";
-    categoryAxis.renderer.labels.template.location = 0.5;
-    categoryAxis.mouseEnabled = false;
+var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "category";
+categoryAxis.renderer.labels.template.location = 0.5;
+categoryAxis.mouseEnabled = false;
 
-    var categoryAxisRenderer = categoryAxis.renderer;
-    categoryAxisRenderer.cellStartLocation = 0;
-    categoryAxisRenderer.tooltipLocation = 0.5;
-    categoryAxisRenderer.grid.template.disabled = true;
-    categoryAxisRenderer.ticks.template.disabled = true;
+var categoryAxisRenderer = categoryAxis.renderer;
+categoryAxisRenderer.cellStartLocation = 0;
+categoryAxisRenderer.tooltipLocation = 0.5;
+categoryAxisRenderer.grid.template.disabled = true;
+categoryAxisRenderer.ticks.template.disabled = true;
 
-    categoryAxisRenderer.axisFills.template.fill = am4core.color("#e8e8e8");
-    categoryAxisRenderer.axisFills.template.fillOpacity = 0.2;
-    categoryAxisRenderer.axisFills.template.location = -0.5;
-    categoryAxisRenderer.line.disabled = true;
-    categoryAxisRenderer.tooltip.disabled = true;
-    categoryAxis.renderer.labels.template.disabled = true;
+categoryAxisRenderer.axisFills.template.fill = am4core.color("#e8e8e8");
+categoryAxisRenderer.axisFills.template.fillOpacity = 0.2;
+categoryAxisRenderer.axisFills.template.location = -0.5;
+categoryAxisRenderer.line.disabled = true;
+categoryAxisRenderer.tooltip.disabled = true;
+categoryAxis.renderer.labels.template.disabled = true;
 
-    categoryAxis.adapter.add("maxZoomFactor", function (maxZoomFactor, target) {
-      return target.dataItems.length / 5;
-    })
+categoryAxis.adapter.add("maxZoomFactor", function(maxZoomFactor, target) {
+  return target.dataItems.length / 5;
+})
 
-    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
-    var valueAxisRenderer = valueAxis.renderer;
+var valueAxisRenderer = valueAxis.renderer;
 
-    valueAxisRenderer.line.disabled = true;
-    valueAxisRenderer.grid.template.disabled = true;
-    valueAxisRenderer.ticks.template.disabled = true;
-    valueAxis.min = 0;
-    valueAxis.renderer.tooltip.disabled = true;
-
-    var series2 = chart.series.push(new am4charts.RadarSeries());
-    series2.category = "TOTAL CASH PILE";
-    series2.dataFields.categoryX = "category";
-    series2.dataFields.valueY = "value2";
-    series2.stacked = true;
-    series2.fillOpacity = 0.5;
-    series2.fill = chart.colors.getIndex(1);
-    series2.stacked = true;
-    series2.strokeOpacity = 0;
-    series2.dataItems.template.locations.categoryX = 0.5;
-    series2.sequencedInterpolation = true;
-    series2.sequencedInterpolationDelay = 50;
-    series2.tooltipText = "[bold]{categoryX}[/]\nTotal: ${valueY.total} \nOverseas: ${value1}";
-    series2.tooltip.pointerOrientation = "vertical";
-    series2.tooltip.label.fill = am4core.color("#ffffff");
-    series2.tooltip.label.fontSize = "0.8em";
-    series2.tooltip.autoTextColor = false;
+valueAxisRenderer.line.disabled = true;
+valueAxisRenderer.grid.template.disabled = true;
+valueAxisRenderer.ticks.template.disabled = true;
+valueAxis.min = 0;
+valueAxis.renderer.tooltip.disabled = true;
 
 
-    chart.cursor = new am4charts.RadarCursor();
-    chart.cursor.lineX.strokeOpacity = 1;
-    chart.cursor.lineY.strokeOpacity = 0;
-    chart.cursor.lineX.stroke = chart.colors.getIndex(1);
-    chart.cursor.innerRadius = am4core.percent(30);
-    chart.cursor.radius = am4core.percent(50);
-    chart.cursor.selection.fill = chart.colors.getIndex(1);
+var series2 = chart.series.push(new am4charts.RadarSeries());
+series2.dataFields.categoryX = "category";
+series2.dataFields.valueY = "value2";
+series2.stacked = true;
+series2.fillOpacity = 0.3;
+series2.fill = chart.colors.getIndex(1);
+series2.stacked = true;
+series2.strokeOpacity = 10;
+series2.dataItems.template.locations.categoryX = 0.5;
+series2.sequencedInterpolation = true;
+series2.sequencedInterpolationDelay = 50;
+series2.tooltip.pointerOrientation = "vertical";
+series2.tooltip.label.fill = am4core.color("#ffffff");
+series2.tooltip.label.fontSize = "1.8em";
+series2.tooltip.autoTextColor = false;
 
-    let bullet = series2.bullets.create();
-    bullet.fill = am4core.color("#000000");
-    bullet.strokeOpacity = 0;
-    bullet.locationX = 0.5;
+chart.seriesContainer.zIndex = -1;
+chart.scrollbarX = new am4core.Scrollbar();
+chart.scrollbarX.parent = chart.bottomAxesContainer;
+chart.scrollbarX.exportable = false;
+chart.scrollbarY = new am4core.Scrollbar();
+chart.scrollbarY.exportable = false;
 
+chart.padding(-10, -10, -10, -10)
 
-    let line = bullet.createChild(am4core.Line);
-    line.x2 = -100;
-    line.x1 = 0;
-    line.y1 = 0;
-    line.y1 = 0;
-    line.strokeOpacity = 1;
+chart.scrollbarY.padding(20, 0, 20, 0);
+chart.scrollbarX.padding(0, 0, 0, 0);
 
-    line.stroke = am4core.color("#000000");
-    line.strokeDasharray = "2,3";
-    line.strokeOpacity = 0.4;
-
-
-    let bulletValueLabel = bullet.createChild(am4core.Label);
-    bulletValueLabel.text = "{valueY.total.formatNumber('$#.0')}";
-    bulletValueLabel.verticalCenter = "middle";
-    bulletValueLabel.horizontalCenter = "right";
-    bulletValueLabel.dy = -3;
-
-    let label = bullet.createChild(am4core.Label);
-    label.text = "{categoryX}";
-    label.verticalCenter = "middle";
-    label.paddingLeft = 20;
-
-    valueAxis.calculateTotals = true;
+chart.scrollbarY.background.padding(0, 0, 0, 0);
+chart.scrollbarX.background.padding(0, 0, 0, 0);
 
 
-    chart.legend = new am4charts.Legend();
-    chart.legend.parent = chart.radarContainer;
-    chart.legend.width = 110;
-    chart.legend.horizontalCenter = "middle";
-    chart.legend.markers.template.width = 22;
-    chart.legend.markers.template.height = 18;
-    chart.legend.markers.template.dy = 2;
-    chart.legend.labels.template.fontSize = "0.7em";
+chart.cursor = new am4charts.RadarCursor();
+chart.cursor.lineX.strokeOpacity = 10;
+chart.cursor.lineY.strokeOpacity = 10;
+chart.cursor.lineX.stroke = chart.colors.getIndex(1);
+chart.cursor.innerRadius = am4core.percent(30);
+chart.cursor.radius = am4core.percent(0);
+chart.cursor.selection.fill = chart.colors.getIndex(1);
+
+let bullet = series2.bullets.create();
+bullet.fill = am4core.color("#000000");
+bullet.strokeOpacity = 0;
+bullet.locationX = 0.0;
+
+
+let line = bullet.createChild(am4core.Line);
+line.x2 = -100;
+line.x1 = 0;
+line.y1 = 0;
+line.y1 = 0;
+line.strokeOpacity = 5;
+
+line.stroke = am4core.color("#000000");
+line.strokeDasharray = "7,3";
+line.strokeOpacity = 15.4;
+
+
+let bulletValueLabel = bullet.createChild(am4core.Label);
+bulletValueLabel.text = "{valueY.total.formatNumber('#.0')}";
+bulletValueLabel.verticalCenter = "middle";
+bulletValueLabel.horizontalCenter = "right";
+bulletValueLabel.dy = -7;
+
+let label = bullet.createChild(am4core.Label);
+label.text = "{categoryX}";
+label.verticalCenter = "middle";
+label.paddingLeft = 20;
+
+valueAxis.calculateTotals = true;
+
+
+chart.legend = new am4charts.Legend();
+chart.legend.parent = chart.radarContainer;
+chart.legend.width = 0;
+chart.legend.horizontalCenter = "middle";
+chart.legend.markers.template.width = 22;
+chart.legend.markers.template.height = 18;
+chart.legend.markers.template.dy = 2;
+chart.legend.labels.template.fontSize = "1.7em";
+chart.legend.dy = 0;
+chart.legend.dx = 0;
+
+chart.legend.itemContainers.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
+let itemHoverState = chart.legend.itemContainers.template.states.create("hover");
+itemHoverState.properties.dx = 5;
+
+let title = chart.radarContainer.createChild(am4core.Label);
+title.fontSize = "1.2em";
+title.verticalCenter = "bottom";
+title.textAlign = "middle";
+title.horizontalCenter = "middle";
+title.fontWeigth = "800";
+
+chart.maskBullets = false;
+
+let circle = bullet.createChild(am4core.Circle);
+circle.radius = 3;
+let hoverState = circle.states.create("hover");
+
+hoverState.properties.scale = 15;
+
+bullet.events.on("positionchanged", function(event) {
+    event.target.children.getIndex(0).invalidate();
+    event.target.children.getIndex(1).invalidatePosition();
+})
+
+
+bullet.adapter.add("dx", function(dx, target) {
+  let angle = categoryAxis.getAngle(target.dataItem, "categoryX", 0.5);
+  return 20 * am4core.math.cos(angle);
+})
+
+bullet.adapter.add("dy", function(dy, target) {
+  let angle = categoryAxis.getAngle(target.dataItem, "categoryX", 0.5);
+  return 20 * am4core.math.sin(angle);
+})
+
+bullet.adapter.add("rotation", function(dy, target) {
+  let angle = Math.min(chart.endAngle, Math.max(chart.startAngle, categoryAxis.getAngle(target.dataItem, "categoryX", 0.5)));
+  return angle;
+})
+
+
+line.adapter.add("x2", function(x2, target) {
+  let dataItem = target.dataItem;
+  if (dataItem) {
+    let position = valueAxis.valueToPosition(dataItem.values.valueY.value + dataItem.values.valueY.stack);
+    return -(position * valueAxis.axisFullLength + 35);
+  }
+  return 0;
+})
+
+
+bulletValueLabel.adapter.add("dx", function(dx, target) {
+  let dataItem = target.dataItem;
+
+  if (dataItem) {
+    let position = valueAxis.valueToPosition(dataItem.values.valueY.value + dataItem.values.valueY.stack);
+    return -(position * valueAxis.axisFullLength + 40);
+  }
+  return 0;
+})
+
+
+chart.seriesContainer.zIndex = 10;
+categoryAxis.zIndex = 11;
+valueAxis.zIndex = 12;
+
+chart.radarContainer.zIndex = 20;
+
+
+let previousBullets = [];
+series2.events.on("tooltipshownat", function(event) {
+  let dataItem = event.dataItem;
+
+  for (let i = 0; i < previousBullets.length; i++) {
+    previousBullets[i].isHover = false;
+  }
+
+  previousBullets = [];
+
+  let itemBullet = dataItem.bullets.getKey(bullet.uid);
+
+  for (let i = 0; i < itemBullet.children.length; i++) {
+    let sprite = itemBullet.children.getIndex(i);
+    sprite.isHover = true;
+    previousBullets.push(sprite);
+  }
+})
+
+series2.tooltip.events.on("visibilitychanged", function() {
+  if (!series2.tooltip.visible) {
+    for (let i = 0; i < previousBullets.length; i++) {
+      previousBullets[i].isHover = false;
+    }
+  }
+})
+
+chart.events.on("maxsizechanged", function() {
+  if(chart.pixelInnerRadius < 200){
+    title.disabled = true;
+    chart.legend.verticalCenter = "middle";
+    chart.legend.dy = 0;
+  }
+  else{
+    title.disabled = false;
+    chart.legend.verticalCenter = "top";
     chart.legend.dy = 20;
-    chart.legend.dx = -9;
+  }
+})
 
-    chart.legend.itemContainers.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
-    let itemHoverState = chart.legend.itemContainers.template.states.create("hover");
-    itemHoverState.properties.dx = 5;
-
-    let title = chart.radarContainer.createChild(am4core.Label);
-    title.text = "COMPANIES WITH\nTHE MOST CASH\nHELD OVERSEAS"
-    title.fontSize = "1.2em";
-    title.verticalCenter = "bottom";
-    title.textAlign = "middle";
-    title.horizontalCenter = "middle";
-    title.fontWeigth = "800";
-
-    chart.maskBullets = false;
-
-    let circle = bullet.createChild(am4core.Circle);
-    circle.radius = 2;
-    let hoverState = circle.states.create("hover");
-
-    hoverState.properties.scale = 5;
-
-    bullet.events.on("positionchanged", function (event) {
-      event.target.children.getIndex(0).invalidate();
-      event.target.children.getIndex(1).invalidatePosition();
-    })
-
-
-    bullet.adapter.add("dx", function (dx, target) {
-      let angle = categoryAxis.getAngle(target.dataItem, "categoryX", 0.5);
-      return 20 * am4core.math.cos(angle);
-    })
-
-    bullet.adapter.add("dy", function (dy, target) {
-      let angle = categoryAxis.getAngle(target.dataItem, "categoryX", 0.5);
-      return 20 * am4core.math.sin(angle);
-    })
-
-    bullet.adapter.add("rotation", function (dy, target) {
-      let angle = Math.min(chart.endAngle, Math.max(chart.startAngle, categoryAxis.getAngle(target.dataItem, "categoryX", 0.5)));
-      return angle;
-    })
-
-
-    line.adapter.add("x2", function (x2, target) {
-      let dataItem = target.dataItem;
-      if (dataItem) {
-        let position = valueAxis.valueToPosition(dataItem.values.valueY.value + dataItem.values.valueY.stack);
-        return -(position * valueAxis.axisFullLength + 35);
-      }
-      return 0;
-    })
-
-
-    bulletValueLabel.adapter.add("dx", function (dx, target) {
-      let dataItem = target.dataItem;
-
-      if (dataItem) {
-        let position = valueAxis.valueToPosition(dataItem.values.valueY.value + dataItem.values.valueY.stack);
-        return -(position * valueAxis.axisFullLength + 40);
-      }
-      return 0;
-    })
-
-
-    chart.seriesContainer.zIndex = 10;
-    categoryAxis.zIndex = 11;
-    valueAxis.zIndex = 12;
-
-    chart.radarContainer.zIndex = 20;
-
-
-    let previousBullets = [];
-    series2.events.on("tooltipshownat", function (event) {
-      let dataItem = event.dataItem;
-
-      for (let i = 0; i < previousBullets.length; i++) {
-        previousBullets[i].isHover = false;
-      }
-
-      previousBullets = [];
-
-      let itemBullet = dataItem.bullets.getKey(bullet.uid);
-
-      for (let i = 0; i < itemBullet.children.length; i++) {
-        let sprite = itemBullet.children.getIndex(i);
-        sprite.isHover = true;
-        previousBullets.push(sprite);
-      }
-    })
-
-    series2.tooltip.events.on("visibilitychanged", function () {
-      if (!series2.tooltip.visible) {
-        for (let i = 0; i < previousBullets.length; i++) {
-          previousBullets[i].isHover = false;
-        }
-      }
-    })
-
-    chart.events.on("maxsizechanged", function () {
-      if (chart.pixelInnerRadius < 200) {
-        title.disabled = true;
-        chart.legend.verticalCenter = "middle";
-        chart.legend.dy = 0;
-      }
-      else {
-        title.disabled = false;
-        chart.legend.verticalCenter = "top";
-        chart.legend.dy = 20;
-      }
-    })
-
-  }); // end am4core.ready()
+}); // end am4core.ready()
 </script>
 
 <!-- HTML -->
