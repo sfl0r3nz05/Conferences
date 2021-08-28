@@ -1,9 +1,10 @@
 <!-- Styles -->
 <style>
-#chartdiv {
-  width: 100%;
-  height: 600px;
-}
+  #chartdiv {
+    width: 100%;
+    height: 700px;
+    font-size: 8pt
+  }
 </style>
 
 <!-- Resources -->
@@ -13,144 +14,466 @@
 
 <!-- Chart code -->
 <script>
-am4core.ready(function() {
+  am4core.ready(function () {
 
-// Themes begin
-am4core.useTheme(am4themes_animated);
-// Themes end
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
 
-var chart = am4core.create("chartdiv", am4charts.RadarChart);
-chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+    /**
+     * Chart design inspired by Nicolas Rapp: https://nicolasrapp.com/studio/
+     */
 
-chart.data = [
-  {
-    category: "1.1",
-    value1: 98.57
-  },
-  {
-    category: "2.1",
-    value1: 97.31
-  },
-  {
-    category: "3.1",
-    value1: 97.88
-  },
-  {
-    category: "4.1",
-    value1: 96.08
-  },
-  {
-    category: "5.1",
-    value1: 97.94
-  },
-  {
-    category: "6.1",
-    value1: 98.07
-  },
-  {
-    category: "7.1",
-    value1: 96.78
-  },
-  {
-    category: "8.1",
-    value1: 96.73
-  },
-  {
-    category: "9.1",
-    value1: 94.25
-  },
-  {
-    category: "10.1",
-    value1: 91.43
-  },
-  {
-    category: "11.1",
-    value1: 93.68
-  },
-  {
-    category: "12.1",
-    value1: 96.06
-  },
-  {
-    category: "13.1",
-    value1: 96.41
-  },
-  {
-    category: "14.1",
-    value1: 75.21
-  },
-  {
-    category: "15.1",
-    value1: 94.97
-  },
-  {
-    category: "16.1",
-    value1: 96.59
-  },
-  {
-    category: "17.1",
-    value1: 97.71
-  },
-  {
-    category: "18.1",
-    value1: 90.88
-  },
-  {
-    category: "19.1",
-    value1: 96.39
-  },
-  {
-    category: "20.1",
-    value1: 96.14
-  },
-  {
-    category: "21.1",
-    value1: 95.34
-  },
-  {
-    category: "22.1",
-    value1: 97.11
-  }
-];
+    var chart = am4core.create("chartdiv", am4charts.RadarChart);
 
-chart.padding(20, 20, 20, 20);
+    chart.data = [
+      {
+        category: "1.1",
+        value1: 98.57,
+        value2: 98.57
+      },
+      {
+        category: "1.2",
+        value1: 97.36,
+        value2: 97.36
+      },
+      {
+        category: "1.3",
+        value1: 98.48,
+        value2: 98.48
+      },
+      {
+        category: "1.4",
+        value1: 97.02,
+        value2: 97.02
+      },
+      {
+        category: "1.5",
+        value1: 97.24,
+        value2: 97.24
+      },
+      {
+        category: "1.6",
+        value1: 97.95,
+        value2: 97.95
+      },
+      {
+        category: "1.7",
+        value1: 98.43,
+        value2: 98.43
+      },
+      {
+        category: "1.8",
+        value1: 98.88,
+        value2: 98.88
+      },
+      {
+        category: "2.1",
+        value1: 98.31,
+        value2: 98.31
+      },
+      {
+        category: "3.1",
+        value1: 97.88,
+        value2: 97.88
+      },
+      {
+        category: "3.2",
+        value1: 98.98,
+        value2: 98.98
+      },
+      {
+        category: "3.3",
+        value1: 96.98,
+        value2: 96.98
+      },
+      {
+        category: "3.4",
+        value1: 99.13,
+        value2: 99.13
+      },
+      {
+        category: "3.5",
+        value1: 98.14,
+        value2: 98.14
+      },
+      {
+        category: "3.6",
+        value1: 98.04,
+        value2: 98.04
+      },
+      {
+        category: "3.7",
+        value1: 97.71,
+        value2: 97.71
+      },
+      {
+        category: "3.8",
+        value1: 98.68,
+        value2: 98.68
+      },
+      {
+        category: "3.9",
+        value1: 97.74,
+        value2: 97.74
+      },
+      {
+        category: "3.10",
+        value1: 96.91,
+        value2: 96.91
+      },
+      {
+        category: "3.11",
+        value1: 95.89,
+        value2: 95.89
+      },
+      {
+        category: "3.12",
+        value1: 99.09,
+        value2: 99.09
+      },
+      {
+        category: "3.13",
+        value1: 96.58,
+        value2: 96.58
+      },
+      {
+        category: "3.14",
+        value1: 98.05,
+        value2: 98.05
+      },
+      {
+        category: "3.15",
+        value1: 96.73,
+        value2: 96.73
+      },
+      {
+        category: "3.16",
+        value1: 98.06,
+        value2: 98.06
+      },
+      {
+        category: "4.1",
+        value1: 96.08,
+        value2: 96.08
+      },
+      {
+        category: "5.1",
+        value1: 97.94,
+        value2: 97.94
+      },
+      {
+        category: "6.1",
+        value1: 98.07,
+        value2: 98.07
+      },
+      {
+        category: "7.1",
+        value1: 96.78,
+        value2: 96.78
+      },
+      {
+        category: "8.1",
+        value1: 96.73,
+        value2: 96.73
+      },
+      {
+        category: "9.1",
+        value1: 94.25,
+        value2: 94.25
+      },
+      {
+        category: "10.1",
+        value1: 91.43,
+        value2: 91.43
+      },
+      {
+        category: "11.1",
+        value1: 93.68,
+        value2: 93.68
+      },
+      {
+        category: "12.1",
+        value1: 96.06,
+        value2: 96.06
+      },
+      {
+        category: "13.1",
+        value1: 96.41,
+        value2: 96.41
+      },
+      {
+        category: "14.1",
+        value1: 75.21,
+        value2: 75.21
+      },
+      {
+        category: "15.1",
+        value1: 94.97,
+        value2: 94.97
+      },
+      {
+        category: "16.1",
+        value1: 96.59,
+        value2: 96.59
+      },
+      {
+        category: "17.1",
+        value1: 97.71,
+        value2: 97.71
+      },
+      {
+        category: "18.1",
+        value1: 90.88,
+        value2: 90.88
+      },
+      {
+        category: "19.1",
+        value1: 96.39,
+        value2: 96.39
+      },
+      {
+        category: "20.1",
+        value1: 96.14,
+        value2: 96.14
+      },
+      {
+        category: "21.1",
+        value1: 95.34,
+        value2: 95.34
+      },
+      {
+        category: "22.1",
+        value1: 97.11,
+        value2: 97.11
+      }
+    ];
 
-var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-categoryAxis.dataFields.category = "category";
-categoryAxis.renderer.labels.template.location = 0.5;
-categoryAxis.renderer.tooltipLocation = 0.5;
-categoryAxis.renderer.cellStartLocation = 0.2;
-categoryAxis.renderer.cellEndLocation = 0.8;
-categoryAxis.fontSize = 19;
 
-var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-valueAxis.tooltip.disabled = true;
-valueAxis.renderer.labels.template.horizontalCenter = "right";
-valueAxis.min = 0;
+    chart.padding(0, 0, 0, 0);
+    chart.radarContainer.dy = 50;
+    chart.innerRadius = am4core.percent(50);
+    chart.radius = am4core.percent(100);
+    chart.zoomOutButton.padding(20, 20, 20, 20);
+    chart.zoomOutButton.margin(20, 20, 20, 20);
+    chart.zoomOutButton.background.cornerRadius(40, 40, 40, 40);
+    chart.zoomOutButton.valign = "bottom";
 
-var series1 = chart.series.push(new am4charts.RadarColumnSeries());
-series1.columns.template.tooltipText = "{name}: {valueY.value}";
-series1.columns.template.width = am4core.percent(100);
-series1.name = "Series 1";
-series1.dataFields.categoryX = "category";
-series1.dataFields.valueY = "value1";
+    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "category";
+    categoryAxis.renderer.labels.template.location = 0.5;
+    categoryAxis.mouseEnabled = false;
 
-chart.seriesContainer.zIndex = -1;
+    var categoryAxisRenderer = categoryAxis.renderer;
+    categoryAxisRenderer.cellStartLocation = 0;
+    categoryAxisRenderer.tooltipLocation = 0.5;
+    categoryAxisRenderer.grid.template.disabled = true;
+    categoryAxisRenderer.ticks.template.disabled = true;
 
-chart.scrollbarX = new am4core.Scrollbar();
-chart.scrollbarX.exportable = false;
-chart.scrollbarY = new am4core.Scrollbar();
-chart.scrollbarY.exportable = false;
+    categoryAxisRenderer.axisFills.template.fill = am4core.color("#e8e8e8");
+    categoryAxisRenderer.axisFills.template.fillOpacity = 0.2;
+    categoryAxisRenderer.axisFills.template.location = -0.5;
+    categoryAxisRenderer.line.disabled = true;
+    categoryAxisRenderer.tooltip.disabled = true;
+    categoryAxis.renderer.labels.template.disabled = true;
 
-chart.cursor = new am4charts.RadarCursor();
-chart.cursor.xAxis = categoryAxis;
-chart.cursor.fullWidthXLine = true;
-chart.cursor.lineX.strokeOpacity = 0;
-chart.cursor.lineX.fillOpacity = 0.2;
-chart.cursor.lineX.fill = am4core.color("#000000"); 
+    categoryAxis.adapter.add("maxZoomFactor", function (maxZoomFactor, target) {
+      return target.dataItems.length / 5;
+    })
 
-}); // end am4core.ready()
+    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+    var valueAxisRenderer = valueAxis.renderer;
+
+    valueAxisRenderer.line.disabled = true;
+    valueAxisRenderer.grid.template.disabled = true;
+    valueAxisRenderer.ticks.template.disabled = true;
+    valueAxis.min = 0;
+    valueAxis.renderer.tooltip.disabled = true;
+
+    var series2 = chart.series.push(new am4charts.RadarSeries());
+    series2.category = "TOTAL CASH PILE";
+    series2.dataFields.categoryX = "category";
+    series2.dataFields.valueY = "value2";
+    series2.stacked = true;
+    series2.fillOpacity = 0.5;
+    series2.fill = chart.colors.getIndex(1);
+    series2.stacked = true;
+    series2.strokeOpacity = 0;
+    series2.dataItems.template.locations.categoryX = 0.5;
+    series2.sequencedInterpolation = true;
+    series2.sequencedInterpolationDelay = 50;
+    series2.tooltipText = "[bold]{categoryX}[/]\nTotal: ${valueY.total} \nOverseas: ${value1}";
+    series2.tooltip.pointerOrientation = "vertical";
+    series2.tooltip.label.fill = am4core.color("#ffffff");
+    series2.tooltip.label.fontSize = "0.8em";
+    series2.tooltip.autoTextColor = false;
+
+
+    chart.cursor = new am4charts.RadarCursor();
+    chart.cursor.lineX.strokeOpacity = 1;
+    chart.cursor.lineY.strokeOpacity = 0;
+    chart.cursor.lineX.stroke = chart.colors.getIndex(1);
+    chart.cursor.innerRadius = am4core.percent(30);
+    chart.cursor.radius = am4core.percent(50);
+    chart.cursor.selection.fill = chart.colors.getIndex(1);
+
+    let bullet = series2.bullets.create();
+    bullet.fill = am4core.color("#000000");
+    bullet.strokeOpacity = 0;
+    bullet.locationX = 0.5;
+
+
+    let line = bullet.createChild(am4core.Line);
+    line.x2 = -100;
+    line.x1 = 0;
+    line.y1 = 0;
+    line.y1 = 0;
+    line.strokeOpacity = 1;
+
+    line.stroke = am4core.color("#000000");
+    line.strokeDasharray = "2,3";
+    line.strokeOpacity = 0.4;
+
+
+    let bulletValueLabel = bullet.createChild(am4core.Label);
+    bulletValueLabel.text = "{valueY.total.formatNumber('$#.0')}";
+    bulletValueLabel.verticalCenter = "middle";
+    bulletValueLabel.horizontalCenter = "right";
+    bulletValueLabel.dy = -3;
+
+    let label = bullet.createChild(am4core.Label);
+    label.text = "{categoryX}";
+    label.verticalCenter = "middle";
+    label.paddingLeft = 20;
+
+    valueAxis.calculateTotals = true;
+
+
+    chart.legend = new am4charts.Legend();
+    chart.legend.parent = chart.radarContainer;
+    chart.legend.width = 110;
+    chart.legend.horizontalCenter = "middle";
+    chart.legend.markers.template.width = 22;
+    chart.legend.markers.template.height = 18;
+    chart.legend.markers.template.dy = 2;
+    chart.legend.labels.template.fontSize = "0.7em";
+    chart.legend.dy = 20;
+    chart.legend.dx = -9;
+
+    chart.legend.itemContainers.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
+    let itemHoverState = chart.legend.itemContainers.template.states.create("hover");
+    itemHoverState.properties.dx = 5;
+
+    let title = chart.radarContainer.createChild(am4core.Label);
+    title.text = "COMPANIES WITH\nTHE MOST CASH\nHELD OVERSEAS"
+    title.fontSize = "1.2em";
+    title.verticalCenter = "bottom";
+    title.textAlign = "middle";
+    title.horizontalCenter = "middle";
+    title.fontWeigth = "800";
+
+    chart.maskBullets = false;
+
+    let circle = bullet.createChild(am4core.Circle);
+    circle.radius = 2;
+    let hoverState = circle.states.create("hover");
+
+    hoverState.properties.scale = 5;
+
+    bullet.events.on("positionchanged", function (event) {
+      event.target.children.getIndex(0).invalidate();
+      event.target.children.getIndex(1).invalidatePosition();
+    })
+
+
+    bullet.adapter.add("dx", function (dx, target) {
+      let angle = categoryAxis.getAngle(target.dataItem, "categoryX", 0.5);
+      return 20 * am4core.math.cos(angle);
+    })
+
+    bullet.adapter.add("dy", function (dy, target) {
+      let angle = categoryAxis.getAngle(target.dataItem, "categoryX", 0.5);
+      return 20 * am4core.math.sin(angle);
+    })
+
+    bullet.adapter.add("rotation", function (dy, target) {
+      let angle = Math.min(chart.endAngle, Math.max(chart.startAngle, categoryAxis.getAngle(target.dataItem, "categoryX", 0.5)));
+      return angle;
+    })
+
+
+    line.adapter.add("x2", function (x2, target) {
+      let dataItem = target.dataItem;
+      if (dataItem) {
+        let position = valueAxis.valueToPosition(dataItem.values.valueY.value + dataItem.values.valueY.stack);
+        return -(position * valueAxis.axisFullLength + 35);
+      }
+      return 0;
+    })
+
+
+    bulletValueLabel.adapter.add("dx", function (dx, target) {
+      let dataItem = target.dataItem;
+
+      if (dataItem) {
+        let position = valueAxis.valueToPosition(dataItem.values.valueY.value + dataItem.values.valueY.stack);
+        return -(position * valueAxis.axisFullLength + 40);
+      }
+      return 0;
+    })
+
+
+    chart.seriesContainer.zIndex = 10;
+    categoryAxis.zIndex = 11;
+    valueAxis.zIndex = 12;
+
+    chart.radarContainer.zIndex = 20;
+
+
+    let previousBullets = [];
+    series2.events.on("tooltipshownat", function (event) {
+      let dataItem = event.dataItem;
+
+      for (let i = 0; i < previousBullets.length; i++) {
+        previousBullets[i].isHover = false;
+      }
+
+      previousBullets = [];
+
+      let itemBullet = dataItem.bullets.getKey(bullet.uid);
+
+      for (let i = 0; i < itemBullet.children.length; i++) {
+        let sprite = itemBullet.children.getIndex(i);
+        sprite.isHover = true;
+        previousBullets.push(sprite);
+      }
+    })
+
+    series2.tooltip.events.on("visibilitychanged", function () {
+      if (!series2.tooltip.visible) {
+        for (let i = 0; i < previousBullets.length; i++) {
+          previousBullets[i].isHover = false;
+        }
+      }
+    })
+
+    chart.events.on("maxsizechanged", function () {
+      if (chart.pixelInnerRadius < 200) {
+        title.disabled = true;
+        chart.legend.verticalCenter = "middle";
+        chart.legend.dy = 0;
+      }
+      else {
+        title.disabled = false;
+        chart.legend.verticalCenter = "top";
+        chart.legend.dy = 20;
+      }
+    })
+
+  }); // end am4core.ready()
 </script>
 
 <!-- HTML -->
+<!-- Chart design inspired by Nicolas Rapp: https://nicolasrapp.com/studio/ -->
 <div id="chartdiv"></div>
