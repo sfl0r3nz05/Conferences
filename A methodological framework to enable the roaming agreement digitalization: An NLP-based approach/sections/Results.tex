@@ -1,8 +1,8 @@
-\section{Discussion of Results}
-Since PDF, i.e., input files of the NLP Engine architecture consist of unstructured text and for instance, undesired characters may remain despite text parsing, it is mandatory determine the \textit{accuracy} of the results obtained once the output JSON file has been populated. For this purpose, two types of experiments have been conducted to determine the \textit{accuracy} of the results. On the one hand, a simple inspection at sub-article level and on the other hand, a verification based on symbol comparison. The tests are performed on two Roaming Agreements sample of the MNOs Proximus and Orange \cite{proximus}. Each experiment is described below and the results obtained are discussed in the same section.
+\section{Discussion of Results}\label{results}
+Our NLP Engine architecture receives PDF files as inputs, and PDF files normally consist of unstructured text. Because of this, undesired characters may remain despite text parsing. Therefore, it is mandatory to determine the \textit{accuracy} of the results obtained once the output JSON file has been populated. For this purpose, two types of experiments have been conducted to determine the \textit{accuracy} of the results. On the one hand, a simple inspection at the sub-article level and on the other hand, a verification based on symbol comparison. The tests were performed on two RA samples of the MNOs Proximus and Orange \cite{proximus}. Each experiment is described below and the results obtained are discussed in the same section.
 
 \subsection{Accuracy determination based on a simple inspection at sub-article level}
-The first accuracy analysis consists of determining by simple inspection, i.e., human-eye inspection, whether each sub-article of the roaming agreement constitutes a \textit{variation}, a \textit{standard clause} or a \textit{customized text} with respect to the GSMA standard template. The results obtained are then compared with the values populated in the NLP Engine output file, for the same sub-article. Considering that the results obtained from the simple inspection constitute the observations and the values collected from sub-articles classification file constitute the predicted values, the following confusion matrices allow us to analyze the results for each sample roaming agreements. In this regard, the confusion matrix in the Table~\ref{table1} indicates that the \textit{accuracy} at which the 72 sub-articles analyzed are satisfactorily classified by the NLP Engine as \textit{standard clauses}, \textit{variations} or \textit{customized texts} is acceptable. Proof of this is the fact that the main diagonal of the matrix concentrates the highest number of True Positives. Table~\ref{table3} summarizes the accuracy of the NLP Engine's sub-article classification capability in percentage terms as \textit{standard clauses}, \textit{variations} and \textit{customized texts}.
+The first accuracy analysis consists of visually determining, i.e., human-eye inspection, whether each sub-article of the RA constitutes a \textit{variation}, a \textit{standard clause} or a \textit{customized text} concerning the GSMA standard template. The results obtained are then compared with the values populated in the NLP Engine output file, for the same sub-article. Considering that the results obtained from the simple inspection constitute the observations and the values collected from the sub-articles classification file constitute the predicted values, the following confusion matrices allow us to analyze the results for each sample RA. In this regard, the confusion matrix in Table~\ref{table1} indicates that the \textit{accuracy} at which the 72 sub-articles analyzed are satisfactorily classified by the NLP Engine as \textit{standard clauses}, \textit{variations} or \textit{customized texts} is acceptable. Proof of this is the fact that the main diagonal of the matrix contains the highest number of True Positives. Table~\ref{table3} summarizes the accuracy of the NLP Engine's sub-article classification capability in percentage terms as \textit{standard clauses}, \textit{variations} and \textit{customized texts}.
 
 \begin{table}[htbp]
 \caption{Confusion Matrix for Proximus Roaming Agreement.}
@@ -40,7 +40,7 @@ The first accuracy analysis consists of determining by simple inspection, i.e., 
 \end{center}
 \end{table}
 
-The Table~\ref{table2}, as well as Table~\ref{table1}, shows satisfactory results for the NLP Engine's predictive capability, i.e., regarding the \textit{accuracy} at which the NLP Engine classifies properly the sub-articles as \textit{standard clauses}, \textit{variations} or \textit{customized texts} for the Orange sample roaming agreement. Using the same evaluation criteria, it is observed how the main diagonal of the confusion matrix in Table~\ref{table2} concentrates the highest number of True Positive. Table~\ref{table3} also summarizes the accuracy of the NLP Engine's sub-article classification capability in percentage terms as \textit{standard clauses}, \textit{variations} and \textit{customized texts}.
+Table ~\ref{table2} shows satisfactory results for the NLP Engine's predictive capability, i.e., regarding the \textit{accuracy} at which the NLP Engine correctly classifies the sub-articles as \textit{standard clauses}, \textit{variations}, or \textit{customized texts} for the Orange sample RA. Using the same evaluation criteria, it is observed how the main diagonal of the confusion matrix in Table~\ref{table2} has the highest number of True Positive. Table~\ref{table3} also summarizes the accuracy of the NLP Engine's sub-article classification capability in percentage terms as \textit{standard clauses}, \textit{variations} and \textit{customized texts}.
 
 \begin{table}[htbp]
 \caption{Summary of accuracy determination for simple inspection at sub-article level.}
@@ -60,10 +60,10 @@ The Table~\ref{table2}, as well as Table~\ref{table1}, shows satisfactory result
 \end{center}
 \end{table}
 
-Beyond the fact that the results themselves can be considered as acceptable, the other behavior to be highlighted in Table~\ref{table3} is the greater classification capacity into \textit{standard clauses}, \textit{variations} and \textit{customized texts} of the NLP Engine in one document with respect to another.
+Beyond the fact that the results themselves can be considered as acceptable, the other behavior to be highlighted in Table~\ref{table3} is the greater classification capacity into \textit{standard clauses}, \textit{variations} and \textit{customized texts} of the NLP Engine in one document concerning another.
 
 \subsection{Accuracy determination based on symbol comparison}
-The second accuracy analysis involves establishing a comparison between the sub-articles populated in the output file with respect to the sub-articles existing in the input file containing the Roaming Agreements. This comparison is performed at the symbol level, considering the order of appearance of each symbol. For that purpose, the text comparison tool Countwordsfree (\cite{countwordsfree}) is used manually copying sub-article by sub-article. For each sub-article is determined:
+The second accuracy analysis involves establishing a comparison between the sub-articles populated in the output file concerning the sub-articles existing in the input file containing the RAs. This comparison is performed at the symbol level, considering the order of appearance of each symbol. For that purpose, the text comparison tool Countwordsfree (\cite{countwordsfree}) is used by manually copying sub-article by sub-article. For each sub-article, the following values are determined:
 
 \begin{enumerate}
 \item Common percentage of symbols between compared sub-articles.
@@ -84,6 +84,29 @@ The second accuracy analysis involves establishing a comparison between the sub-
 \label{fig4}
 \end{figure}
 
-The following radar chart allow us to analyze the results for each roaming agreement. The radar chart contain in the inner radius the Common percentage of symbols between compared sub-articles and in the outer radius the identifier of the compared sub-article. Fig.~\ref{fig3} shows a comparison in terms of the common percentage of symbols between compared sub-articles for the Proximus sample roaming agreement. The conclusion that can be reached by simple inspection is that only 11 of the 72, i.e.,  84.7\% of the analyzed sub-articles are affected, mostly by the introduction of undesired characters when output file was populated.
+The illustrated radar charts allow us to analyze the results for each RA. The radar chart contains in the inner radius the common percentage of symbols between compared sub-articles and in the outer radius the identifier of the compared sub-article. Fig.~\ref{fig3} shows a comparison in terms of the common percentage of symbols between compared sub-articles for the Proximus sample RA. The conclusion that can be reached by simple inspection is that only 11 of the 72, i.e.,  84.7\% of the analyzed sub-articles are affected, mostly by the introduction of undesired characters when the output file was populated.
 
-Similarly, Fig.~\ref{fig4} shows a comparison in terms of the common percentage of symbols between the sub-articles compared for the Orange sample roaming agreement. In this case, only 7 of the 86, i.e., 91.9\% of the analyzed sub-articles are affected by the introduction of undesired characters when the output file is populated, thus improving the results obtained for the Proximus sample roaming agreement.
+Similarly, Fig.~\ref{fig4} shows a comparison in terms of the common percentage of symbols between the sub-articles compared for the Orange sample RA. In this case, only 7 of the 86, i.e., 91.9\% of the analyzed sub-articles are affected by the introduction of undesired characters when the output file is populated, thus improving the results obtained for the Proximus sample RA.
+
+%\subsection{Analysis of the novelty of the contribution}
+
+%\begin{table}[htbp]
+%\caption{Analysis of the novelty of the contribution.}
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|c|c|c|c|}
+%\hline
+%\multirow{2}{*}{\textbf{Field}} & %\multirow{2}{*}{\textbf{C}} & %\multicolumn{3}{c|}{\textbf{RA phase}} & %\multicolumn{3}{c|}{\textbf{NLP  Engine}} \\ %\cline{3-8} 
+%&  & Dr & I & T & D & I & T \\ \hline
+%\textbf{} & our contribution &  &  &  &  & &  \\ %\hline
+%\multirow{3}{*}{\textbf{RA}} 
+%& \cite{9369516} &  &  &  &  &  &  \\ \cline{2-8} 
+%& \cite{9024541} &  &  &  &  &  &  \\ \cline{2-8} 
+%& \cite{Huillet2020} &  &  &  &  &  &  \\ \hline
+%\multirow{3}{*}{\textbf{NLP}} 
+%& \cite{8487847} &  &  &  &  &  &  \\ \cline{2-8} 
+%& \cite{9138070} &  &  &  &  &  &  \\ \cline{2-8} 
+%& \cite{9104105} &  &  &  &  &  &  \\ \hline
+%\end{tabular}
+%\label{table3}
+%\end{center}
+%\end{table}
