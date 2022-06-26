@@ -54,7 +54,7 @@
     kubectl label namespace jnic2022-pod-security pod-security.kubernetes.io/enforce=restricted
     ```
 
-8. Verify policy labeled
+8. Verify policy labeled on namespace
 
     ```console
     kubectl get ns jnic2022-pod-security -o yaml
