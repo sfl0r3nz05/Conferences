@@ -77,3 +77,5 @@
     ```console
     kubectl delete namespace jnic2022-pod-security
     ```
+
+🎬 [video demonstration](./Confirm_Pod_Security_is_enabled.mp4)
