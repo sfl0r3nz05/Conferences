@@ -13,7 +13,7 @@
     chmod 0755 /usr/local/bin/kind
     ```
 
-3. Define cluster
+3. Cluster definition
 
     ```console
     nano kind-config.yaml
@@ -45,26 +45,35 @@
 6. Create a namespace to run the test
 
     ```console
-    kubectl create namespace verify-pod-security
+    kubectl create namespace jnic2022-pod-security
     ```
 
 7. Label the namespace to enforce the restricted Pod Security Standard
 
     ```console
-    kubectl label namespace verify-pod-security pod-security.kubernetes.io/enforce=restricted
-    kubectl get ns verify-pod-security -o yaml
+    kubectl label namespace jnic2022-pod-security pod-security.kubernetes.io/enforce=restricted
     ```
 
-8. Test the creation of a test Pod and confirm that is no admited
+8. Verify policy labeled
 
     ```console
-    kubectl -n verify-pod-security run test --dry-run=server --image=busybox --privileged
+    kubectl get ns jnic2022-pod-security -o yaml
     ```
 
-9. If you receive Forbiden error from server the test is successfull
-
-10. Clean up
+9. Test the creation of a test Pod and confirm that is no admited
 
     ```console
-    kubectl delete namespace verify-pod-security
+    kubectl -n jnic2022-pod-security run test --dry-run=server --image=busybox --privileged
+    ```
+
+10. If you receive Forbiden error from server the test is successfull. E.g.:
+
+    ```console
+    Error from server (Forbidden): pods "test" is forbidden: error looking up service account jnic2022-pod-security/default: serviceaccount "default" not found
+    ```
+
+11. Clean up
+
+    ```console
+    kubectl delete namespace jnic2022-pod-security
     ```
